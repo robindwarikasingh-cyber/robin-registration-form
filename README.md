@@ -84,6 +84,17 @@
             box-shadow: 0 0 5px rgba(42, 157, 143, 0.4);
         }
 
+        input::placeholder {
+            color: #666666;
+            font-size: 13px;
+        }
+
+        .field-hint {
+            font-size: 12px;
+            color: #555555;
+            margin-top: 5px;
+        }
+
         button {
             width: 100%;
             margin-top: 22px;
@@ -140,24 +151,25 @@
         </div>
 
         <div class="security-note">
-            Create your secure online banking profile. All fields must be completed before registration can continue.
+            Create your secure online banking profile. The field hints explain the validation rules before registration can continue.
         </div>
 
         <form id="registrationForm" onsubmit="return validateForm()">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username">
+            <input type="text" id="username" name="username" placeholder="At least 5 characters, no spaces">
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password">
+            <input type="password" id="password" name="password" placeholder="8+ chars: upper, lower, number & special character">
 
             <label for="confirmPassword">Confirm password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Must match the password entered above">
 
             <label for="email">Email id</label>
-            <input type="text" id="email" name="email" placeholder="example@email.com">
+            <input type="text" id="email" name="email" placeholder="Enter a valid email, e.g. name@example.com">
 
             <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob">
+            <input type="date" id="dob" name="dob" title="Select your date of birth. You must be at least 18 years old.">
+            <div class="field-hint">Must not be a future date. User must be at least 18 years old.</div>
 
             <button type="submit">Submit Registration</button>
 
